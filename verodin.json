@@ -4,7 +4,7 @@
   "description": "Phantom app for Verodin",
   "type": "generic",
   "main_module": "verodin_connector.py",
-  "app_version": "1.0.0",
+  "app_version": "1.0.1",
   "product_vendor": "Verodin, Inc",
   "product_name": "Verodin",
   "product_version_regex": ".*",
@@ -48,8 +48,7 @@
       "type": "test",
       "identifier": "test_asset_connectivity",
       "read_only": true,
-      "parameters": {
-      },
+      "parameters": {},
       "output": [],
       "versions": "EQ(*)"
     },
@@ -59,8 +58,7 @@
       "type": "generic",
       "identifier": "get_nodes",
       "read_only": true,
-      "parameters": {
-      },
+      "parameters": {},
       "output": [],
       "versions": "EQ(*)"
     },
@@ -70,8 +68,7 @@
       "type": "generic",
       "identifier": "get_map",
       "read_only": true,
-      "parameters": {
-      },
+      "parameters": {},
       "output": [],
       "versions": "EQ(*)"
     },
@@ -85,7 +82,9 @@
         "id": {
           "description": "Zone to query",
           "data_type": "numeric",
-          "contains": ["zone id"],
+          "contains": [
+            "zone id"
+          ],
           "primary": true,
           "required": false
         }
@@ -103,7 +102,9 @@
         "id": {
           "description": "Zone to delete",
           "data_type": "numeric",
-          "contains": ["zone id"],
+          "contains": [
+            "zone id"
+          ],
           "primary": true,
           "required": true
         }
@@ -117,8 +118,7 @@
       "type": "generic",
       "identifier": "get_sims_actions",
       "read_only": true,
-      "parameters": {
-      },
+      "parameters": {},
       "output": [],
       "versions": "EQ(*)"
     },
@@ -132,7 +132,9 @@
         "id": {
           "description": "Simulation to run",
           "data_type": "numeric",
-          "contains": ["simulation id"],
+          "contains": [
+            "simulation id"
+          ],
           "primary": true,
           "required": true
         }
@@ -150,14 +152,18 @@
         "id": {
           "description": "Simulation to get",
           "data_type": "numeric",
-          "contains": ["simulation id"],
+          "contains": [
+            "simulation id"
+          ],
           "primary": true,
           "required": false
         },
         "type": {
           "description": "Type of information to get",
           "data_type": "string",
-          "contains": ["simulation type"],
+          "contains": [
+            "simulation type"
+          ],
           "primary": true,
           "required": false
         }
@@ -175,7 +181,9 @@
         "id": {
           "description": "Simulation to delete",
           "data_type": "numeric",
-          "contains": ["simulation id"],
+          "contains": [
+            "simulation id"
+          ],
           "primary": true,
           "required": true
         }
@@ -193,7 +201,9 @@
         "id": {
           "description": "Job to query",
           "data_type": "numeric",
-          "contains": ["job id"],
+          "contains": [
+            "job id"
+          ],
           "primary": true,
           "required": false
         }
@@ -211,7 +221,9 @@
         "id": {
           "description": "Job to run",
           "data_type": "numeric",
-          "contains": ["job id"],
+          "contains": [
+            "job id"
+          ],
           "primary": true,
           "required": true
         }
@@ -229,7 +241,9 @@
         "id": {
           "description": "Job to query",
           "data_type": "numeric",
-          "contains": ["job id"],
+          "contains": [
+            "job id"
+          ],
           "primary": true,
           "required": true
         }
@@ -247,7 +261,9 @@
         "id": {
           "description": "Job to cancel",
           "data_type": "numeric",
-          "contains": ["job id"],
+          "contains": [
+            "job id"
+          ],
           "primary": true,
           "required": true
         }
@@ -255,5 +271,6 @@
       "output": [],
       "versions": "EQ(*)"
     }
-  ]
+  ],
+  "utctime_updated": "2018-01-02T20:46:34.000000Z"
 }
