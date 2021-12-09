@@ -1,276 +1,300 @@
 {
-  "appid": "d7ec4d58-c812-4537-aaa5-1e942f1ba027",
-  "name": "Verodin",
-  "description": "Phantom app for Verodin",
-  "type": "generic",
-  "main_module": "verodin_connector.py",
-  "app_version": "1.0.1",
-  "product_vendor": "Verodin, Inc",
-  "product_name": "Verodin",
-  "product_version_regex": ".*",
-  "logo": "verodin.png",
-  "min_phantom_version": "2.0.264",
-  "publisher": "Blackstone",
-  "package_name": "phantom_verodin",
-  "license": "Copyright (c) Blackstone 2016",
-  "consolidate_widgets": false,
-  "configuration": {
-    "server": {
-      "description": "Server IP/Hostname",
-      "data_type": "string",
-      "required": true,
-      "order": 0
-    },
-    "username": {
-      "description": "API username",
-      "data_type": "string",
-      "required": true,
-      "order": 1
-    },
-    "password": {
-      "description": "API password",
-      "data_type": "password",
-      "required": true,
-      "order": 2
-    },
-    "verify_server_cert": {
-      "data_type": "boolean",
-      "description": "Verify server certificate",
-      "required": true,
-      "order": 3,
-      "default": true
-    }
-  },
-  "actions": [
-    {
-      "action": "test connectivity",
-      "description": "Validate the asset configuration for connectivity",
-      "type": "test",
-      "identifier": "test_asset_connectivity",
-      "read_only": true,
-      "parameters": {},
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "get nodes",
-      "description": "Get node topology",
-      "type": "generic",
-      "identifier": "get_nodes",
-      "read_only": true,
-      "parameters": {},
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "get map",
-      "description": "Get topology map",
-      "type": "generic",
-      "identifier": "get_map",
-      "read_only": true,
-      "parameters": {},
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "get zone",
-      "description": "Get zone(s) info",
-      "type": "generic",
-      "identifier": "get_zone",
-      "read_only": true,
-      "parameters": {
-        "id": {
-          "description": "Zone to query",
-          "data_type": "numeric",
-          "contains": [
-            "zone id"
-          ],
-          "primary": true,
-          "required": false
-        }
-      },
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "delete zone",
-      "description": "Delete a zone",
-      "type": "generic",
-      "identifier": "delete_zone",
-      "read_only": false,
-      "parameters": {
-        "id": {
-          "description": "Zone to delete",
-          "data_type": "numeric",
-          "contains": [
-            "zone id"
-          ],
-          "primary": true,
-          "required": true
-        }
-      },
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "get sims actions",
-      "description": "Get a list of actions for each simulation",
-      "type": "generic",
-      "identifier": "get_sims_actions",
-      "read_only": true,
-      "parameters": {},
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "run sim",
-      "description": "Run a simulation",
-      "type": "generic",
-      "identifier": "run_sim",
-      "read_only": false,
-      "parameters": {
-        "id": {
-          "description": "Simulation to run",
-          "data_type": "numeric",
-          "contains": [
-            "simulation id"
-          ],
-          "primary": true,
-          "required": true
-        }
-      },
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "get sim",
-      "description": "Get simulation",
-      "type": "generic",
-      "identifier": "get_sim",
-      "read_only": true,
-      "parameters": {
-        "id": {
-          "description": "Simulation to get",
-          "data_type": "numeric",
-          "contains": [
-            "simulation id"
-          ],
-          "primary": true,
-          "required": false
+    "appid": "d7ec4d58-c812-4537-aaa5-1e942f1ba027",
+    "name": "Verodin",
+    "description": "Phantom app for Verodin",
+    "type": "generic",
+    "main_module": "verodin_connector.py",
+    "app_version": "1.0.1",
+    "product_vendor": "Verodin, Inc",
+    "product_name": "Verodin",
+    "product_version_regex": ".*",
+    "logo": "verodin.png",
+    "min_phantom_version": "2.0.264",
+    "publisher": "Blackstone",
+    "package_name": "phantom_verodin",
+    "license": "Copyright (c) Blackstone 2016",
+    "consolidate_widgets": false,
+    "configuration": {
+        "server": {
+            "description": "Server IP/Hostname",
+            "data_type": "string",
+            "required": true,
+            "order": 0
         },
-        "type": {
-          "description": "Type of information to get",
-          "data_type": "string",
-          "contains": [
-            "simulation type"
-          ],
-          "primary": true,
-          "required": false
+        "username": {
+            "description": "API username",
+            "data_type": "string",
+            "required": true,
+            "order": 1
+        },
+        "password": {
+            "description": "API password",
+            "data_type": "password",
+            "required": true,
+            "order": 2
+        },
+        "verify_server_cert": {
+            "data_type": "boolean",
+            "description": "Verify server certificate",
+            "required": true,
+            "order": 3,
+            "default": true
         }
-      },
-      "output": [],
-      "versions": "EQ(*)"
     },
-    {
-      "action": "delete sim",
-      "description": "Delete a simulation",
-      "type": "generic",
-      "identifier": "delete_sim",
-      "read_only": false,
-      "parameters": {
-        "id": {
-          "description": "Simulation to delete",
-          "data_type": "numeric",
-          "contains": [
-            "simulation id"
-          ],
-          "primary": true,
-          "required": true
+    "actions": [
+        {
+            "action": "test connectivity",
+            "description": "Validate the asset configuration for connectivity",
+            "type": "test",
+            "identifier": "test_asset_connectivity",
+            "read_only": true,
+            "parameters": {},
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "get nodes",
+            "description": "Get node topology",
+            "type": "generic",
+            "identifier": "get_nodes",
+            "read_only": true,
+            "parameters": {},
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "get map",
+            "description": "Get topology map",
+            "type": "generic",
+            "identifier": "get_map",
+            "read_only": true,
+            "parameters": {},
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "get zone",
+            "description": "Get zone(s) info",
+            "type": "generic",
+            "identifier": "get_zone",
+            "read_only": true,
+            "parameters": {
+                "id": {
+                    "description": "Zone to query",
+                    "data_type": "numeric",
+                    "contains": [
+                        "zone id"
+                    ],
+                    "primary": true,
+                    "required": false
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "delete zone",
+            "description": "Delete a zone",
+            "type": "generic",
+            "identifier": "delete_zone",
+            "read_only": false,
+            "parameters": {
+                "id": {
+                    "description": "Zone to delete",
+                    "data_type": "numeric",
+                    "contains": [
+                        "zone id"
+                    ],
+                    "primary": true,
+                    "required": true
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "get sims actions",
+            "description": "Get a list of actions for each simulation",
+            "type": "generic",
+            "identifier": "get_sims_actions",
+            "read_only": true,
+            "parameters": {},
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "run sim",
+            "description": "Run a simulation",
+            "type": "generic",
+            "identifier": "run_sim",
+            "read_only": false,
+            "parameters": {
+                "id": {
+                    "description": "Simulation to run",
+                    "data_type": "numeric",
+                    "contains": [
+                        "simulation id"
+                    ],
+                    "primary": true,
+                    "required": true
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "get sim",
+            "description": "Get simulation",
+            "type": "generic",
+            "identifier": "get_sim",
+            "read_only": true,
+            "parameters": {
+                "id": {
+                    "description": "Simulation to get",
+                    "data_type": "numeric",
+                    "contains": [
+                        "simulation id"
+                    ],
+                    "primary": true,
+                    "required": false
+                },
+                "type": {
+                    "description": "Type of information to get",
+                    "data_type": "string",
+                    "contains": [
+                        "simulation type"
+                    ],
+                    "primary": true,
+                    "required": false
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "delete sim",
+            "description": "Delete a simulation",
+            "type": "generic",
+            "identifier": "delete_sim",
+            "read_only": false,
+            "parameters": {
+                "id": {
+                    "description": "Simulation to delete",
+                    "data_type": "numeric",
+                    "contains": [
+                        "simulation id"
+                    ],
+                    "primary": true,
+                    "required": true
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "get job",
+            "description": "Get information about job(s)",
+            "type": "generic",
+            "identifier": "get_job",
+            "read_only": true,
+            "parameters": {
+                "id": {
+                    "description": "Job to query",
+                    "data_type": "numeric",
+                    "contains": [
+                        "job id"
+                    ],
+                    "primary": true,
+                    "required": false
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "run_job",
+            "description": "Run a job",
+            "type": "generic",
+            "identifier": "run_job",
+            "read_only": false,
+            "parameters": {
+                "id": {
+                    "description": "Job to run",
+                    "data_type": "numeric",
+                    "contains": [
+                        "job id"
+                    ],
+                    "primary": true,
+                    "required": true
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "get job actions",
+            "description": "Get job actions",
+            "type": "generic",
+            "identifier": "get_job_actions",
+            "read_only": true,
+            "parameters": {
+                "id": {
+                    "description": "Job to query",
+                    "data_type": "numeric",
+                    "contains": [
+                        "job id"
+                    ],
+                    "primary": true,
+                    "required": true
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
+        },
+        {
+            "action": "cancel_job",
+            "description": "Cancel a job",
+            "type": "generic",
+            "identifier": "cancel_job",
+            "read_only": false,
+            "parameters": {
+                "id": {
+                    "description": "Job to cancel",
+                    "data_type": "numeric",
+                    "contains": [
+                        "job id"
+                    ],
+                    "primary": true,
+                    "required": true
+                }
+            },
+            "output": [],
+            "versions": "EQ(*)"
         }
-      },
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "get job",
-      "description": "Get information about job(s)",
-      "type": "generic",
-      "identifier": "get_job",
-      "read_only": true,
-      "parameters": {
-        "id": {
-          "description": "Job to query",
-          "data_type": "numeric",
-          "contains": [
-            "job id"
-          ],
-          "primary": true,
-          "required": false
-        }
-      },
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "run_job",
-      "description": "Run a job",
-      "type": "generic",
-      "identifier": "run_job",
-      "read_only": false,
-      "parameters": {
-        "id": {
-          "description": "Job to run",
-          "data_type": "numeric",
-          "contains": [
-            "job id"
-          ],
-          "primary": true,
-          "required": true
-        }
-      },
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "get job actions",
-      "description": "Get job actions",
-      "type": "generic",
-      "identifier": "get_job_actions",
-      "read_only": true,
-      "parameters": {
-        "id": {
-          "description": "Job to query",
-          "data_type": "numeric",
-          "contains": [
-            "job id"
-          ],
-          "primary": true,
-          "required": true
-        }
-      },
-      "output": [],
-      "versions": "EQ(*)"
-    },
-    {
-      "action": "cancel_job",
-      "description": "Cancel a job",
-      "type": "generic",
-      "identifier": "cancel_job",
-      "read_only": false,
-      "parameters": {
-        "id": {
-          "description": "Job to cancel",
-          "data_type": "numeric",
-          "contains": [
-            "job id"
-          ],
-          "primary": true,
-          "required": true
-        }
-      },
-      "output": [],
-      "versions": "EQ(*)"
+    ],
+    "utctime_updated": "2018-01-02T20:46:34.000000Z",
+    "pip_dependencies": {
+        "wheel": [
+            {
+                "module": "certifi",
+                "input_file": "wheels/certifi-2021.10.8-py2.py3-none-any.whl"
+            },
+            {
+                "module": "chardet",
+                "input_file": "wheels/chardet-3.0.4-py2.py3-none-any.whl"
+            },
+            {
+                "module": "idna",
+                "input_file": "wheels/idna-2.10-py2.py3-none-any.whl"
+            },
+            {
+                "module": "requests",
+                "input_file": "wheels/requests-2.25.0-py2.py3-none-any.whl"
+            },
+            {
+                "module": "urllib3",
+                "input_file": "wheels/urllib3-1.26.7-py2.py3-none-any.whl"
+            }
+        ]
     }
-  ],
-  "utctime_updated": "2018-01-02T20:46:34.000000Z"
 }
