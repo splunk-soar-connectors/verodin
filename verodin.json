@@ -4,7 +4,7 @@
     "description": "Phantom app for Verodin",
     "type": "generic",
     "main_module": "verodin_connector.py",
-    "app_version": "1.0.1",
+    "app_version": "1.0.2",
     "product_vendor": "Verodin, Inc",
     "product_name": "Verodin",
     "product_version_regex": ".*",
@@ -272,7 +272,7 @@
             "versions": "EQ(*)"
         }
     ],
-    "utctime_updated": "2018-01-02T20:46:34.000000Z",
+    "utctime_updated": "2022-01-07T20:55:53.000000Z",
     "pip_dependencies": {
         "wheel": [
             {
